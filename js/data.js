@@ -1,49 +1,166 @@
-let dogTreats = "<ul><li>Popcorn</li><li>Bones</li><li>Peanut Butter</li><li>Cheese</li></ul>";
-let catTreats = "<ul><li>Temptations</li><li>Tuna</li><li>Milk</li><li>Salmon</li></ul>";
-let otherTreats = "<ul><li>Carrots</li><li>Sunflower Seeds</li><li>Broccoli</li><li>Crickets</li></ul>";
+let LilyTreats = "<ul><li>Tuna</li><li>Party Mix</li><li>Cheese</li></ul>";
+let HugoTreats = "<ul><li>Temptations</li><li>Salmon</li><li>Milk</li></ul>";
+let SimbaTreats = "<ul><li>Meow Mix</li><li>Tuna</li><li>Mice</li></ul>";
+let MiloTreats = "<ul><li>Chicken Liver</li><li>Bread</li><li>Tuna</li></ul>";
+let MinnieTreats = "<ul><li>Beef Liver</li><li>Salmon</li><li>Milk</li></ul>";
 
-let dogNames = ["Ivy", "Arya", "Gary", "Rufus"];
-let catNames = ["Lily", "Hugo", "Simba", "Milo"];
-let otherNames = ["Mango", "Coco", "Purin", "Bob"];
+let IvyTreats = ["Bones", "Popcorn", "Peanut Butter"];
+let AryaTreats = ["Beef Liver", "Milkbones", "Beef"];
+let GaryTreats = ["Sweet Potato", "Cheese", "Chicken"];
+let RufusTreats = ["Salami", "Popcorn", "Sticks"];
+let RoxyTreats = ["Cheese", "Chicken Liver", "Bones"];
 
-//I am not sure how to make this into a list. I tried putting it in quotations but it didn't work...
-let layoutList = <div id="animal1" class="animalbox">
-                    <div id="image1" class="image">
-                      <img src="https://dummyimage.com/200x250/000/fff.png" alt="dog">
-                    </div>
-                    <div class="infodiv">
-                      <h3 id="name1"></h3>
-                      <h4 class="treatheader">Favourite Treat</h4>
-                      <p id="bio1"></p>
-                    </div>
-                  </div>
-                  <div id="animal2" class="animalbox">
-                    <div id="image2" class="image">
-                      <img src="https://dummyimage.com/200x250/000/fff.png" alt="dog">
-                    </div>
-                    <div class="infodiv">
-                      <h3 id="name2"></h3>
-                      <h4 class="treatheader">Favourite Treat</h4>
-                      <p id="bio2"></p>
-                    </div>
-                  </div>
-                  <div id="animal3" class="animalbox">
-                    <div id="image3" class="image">
-                      <img src="https://dummyimage.com/200x250/000/fff.png" alt="dog">
-                    </div>
-                    <div class="infodiv">
-                      <h3 id="name3"></h3>
-                      <h4 class="treatheader">Favourite Treat</h4>
-                      <p id="bio3"></p>
-                    </div>
-                  </div>
-                  <div id="animal4" class="animalbox">
-                    <div id="image4" class="image">
-                      <img src="https://dummyimage.com/200x250/000/fff.png" alt="dog">
-                    </div>
-                    <div class="infodiv">
-                      <h3 id="name4"></h3>
-                      <h4 class="treatheader">Favourite Treat</h4>
-                      <p id="bio4"></p>
-                    </div>
-                  </div>
+let dogList = "<ul>"
+                  + "<li><div id='animal1' class='animalbox'>"
+                  + "<div id='image1' class='image'>"
+                      + "<img src='https://dummyimage.com/200x250/000/fff.png' alt='dog'>"
+                    + "</div>"
+                    + "<div class='infodiv'>"
+                      + "<h3 id='name1'>Ivy</h3>"
+                      + "<h4 class='treatheader'>Favourite Treat</h4>"
+                      + "<button class='treatButton' id='showTreats1'>Show Favourite Treats</button>"
+                      + "<div class='treatlist' id='treats1'></div>"
+                    + "</div>"
+                  + "</div></li>"
+                  + "<li><div id='animal2' class='animalbox'>"
+                    + "<div id='image2' class='image'>"
+                      + "<img src='https://dummyimage.com/200x250/000/fff.png' alt='dog'>"
+                    + "</div>"
+                    + "<div class='infodiv'>"
+                      + "<h3 id='name2'>Arya</h3>"
+                      + "<h4 class='treatheader'>Favourite Treat</h4>"
+                      + "<button class='treatButton' id='showTreats2'>Show Favourite Treats</button>"
+                      + "<div class='treatlist' id='treats2'></div>"
+                    + "</div>"
+                  + "</div></li>"
+                  + "<li><div id='animal3' class='animalbox'>"
+                    + "<div id='image3' class='image'>"
+                      + "<img src='https://dummyimage.com/200x250/000/fff.png' alt='dog'>"
+                    + "</div>"
+                    + "<div class='infodiv'>"
+                      + "<h3 id='name3'>Gary</h3>"
+                      + "<h4 class='treatheader'>Favourite Treat</h4>"
+                      + "<button class='treatButton' id='showTreats3'>Show Favourite Treats</button>"
+                      + "<div class='treatlist' id='treats3'></div>"
+                    + "</div>"
+                  + "</div></li>"
+                  + "<li><div id='animal4' class='animalbox'>"
+                    + "<div id='image4' class='image'>"
+                      + "<img src='https://dummyimage.com/200x250/000/fff.png' alt='dog'>"
+                    + "</div>"
+                    + "<div class='infodiv'>"
+                      + "<h3 id='name4'>Rufus</h3>"
+                      + "<h4 class='treatheader'>Favourite Treat</h4>"
+                      + "<button class='treatButton' id='showTreats4'>Show Favourite Treats</button>"
+                      + "<div class='treatlist' id='treats4'></div>"
+                    + "</div></div></li></ul>"
+                    + "<li><div id='animal5' class='animalbox'>"
+                      + "<div id='image5' class='image'>"
+                        + "<img src='https://dummyimage.com/200x250/000/fff.png' alt='dog'>"
+                      + "</div>"
+                      + "<div class='infodiv'>"
+                        + "<h3 id='name5'>Roxy</h3>"
+                        + "<h4 class='treatheader'>Favourite Treat</h4>"
+                        + "<button class='treatButton' id='showTreats5'>Show Favourite Treats</button>"
+                        + "<div class='treatlist' id='treats5'></div>"
+                      + "</div></div></li></ul>";
+
+let otherList = "<ul>"
+                  + "<li><div id='animal1' class='animalbox'>"
+                  + "<div id='image1' class='image'>"
+                      + "<img src='https://dummyimage.com/200x250/000/fff.png' alt='dog'>"
+                    + "</div>"
+                    + "<div class='infodiv'>"
+                      + "<h3 id='name1'>Mango</h3>"
+                      + "<h4 class='treatheader'>Favourite Treat</h4>"
+                      + "<button class='treatButton' id='showTreats1'>Show Favourite Treats</button>"
+                      + "<div class='treatlist' id='treats1'></div>"
+                    + "</div>"
+                  + "</div></li>"
+                  + "<li><div id='animal2' class='animalbox'>"
+                    + "<div id='image2' class='image'>"
+                      + "<img src='https://dummyimage.com/200x250/000/fff.png' alt='dog'>"
+                    + "</div>"
+                    + "<div class='infodiv'>"
+                      + "<h3 id='name2'>Arya</h3>"
+                      + "<h4 class='treatheader'>Favourite Treat</h4>"
+                      + "<button class='treatButton' id='showTreats2'>Show Favourite Treats</button>"
+                      + "<div class='treatlist' id='treats2'></div>"
+                    + "</div>"
+                  + "</div></li>"
+                  + "<li><div id='animal3' class='animalbox'>"
+                    + "<div id='image3' class='image'>"
+                      + "<img src='https://dummyimage.com/200x250/000/fff.png' alt='dog'>"
+                    + "</div>"
+                    + "<div class='infodiv'>"
+                      + "<h3 id='name3'>Gary</h3>"
+                      + "<h4 class='treatheader'>Favourite Treat</h4>"
+                      + "<button class='treatButton' id='showTreats3'>Show Favourite Treats</button>"
+                      + "<div class='treatlist' id='treats3'></div>"
+                    + "</div>"
+                  + "</div></li>"
+                  + "<li><div id='animal4' class='animalbox'>"
+                    + "<div id='image4' class='image'>"
+                      + "<img src='https://dummyimage.com/200x250/000/fff.png' alt='dog'>"
+                    + "</div>"
+                    + "<div class='infodiv'>"
+                      + "<h3 id='name4'>Rufus</h3>"
+                      + "<h4 class='treatheader'>Favourite Treat</h4>"
+                      + "<button class='treatButton' id='showTreats4'>Show Favourite Treats</button>"
+                      + "<div class='treatlist' id='treats4'></div>"
+                    + "</div></div></li></ul>";
+
+let catList = "<ul>"
+                  + "<li><div id='animal6' class='animalbox'>"
+                  + "<div id='image6' class='image'>"
+                      + "<img src='https://dummyimage.com/200x250/000/fff.png' alt='dog'>"
+                    + "</div>"
+                    + "<div class='infodiv'>"
+                      + "<h3 id='name6'>Lily</h3>"
+                      + "<h4 class='treatheader'>Favourite Treat</h4>"
+                      + "<button class='treatButton' id='showTreats6'>Show Favourite Treats</button>"
+                      + "<div class='treatlist' id='treats6'></div>"
+                    + "</div>"
+                  + "</div></li>"
+                  + "<li><div id='animal7' class='animalbox'>"
+                    + "<div id='image7' class='image'>"
+                      + "<img src='https://dummyimage.com/200x250/000/fff.png' alt='dog'>"
+                    + "</div>"
+                    + "<div class='infodiv'>"
+                      + "<h3 id='name7'>Hugo</h3>"
+                      + "<h4 class='treatheader'>Favourite Treat</h4>"
+                      + "<button class='treatButton' id='showTreats7'>Show Favourite Treats</button>"
+                      + "<div class='treatlist' id='treats7'></div>"
+                    + "</div>"
+                  + "</div></li>"
+                  + "<li><div id='animal8' class='animalbox'>"
+                    + "<div id='image8' class='image'>"
+                      + "<img src='https://dummyimage.com/200x250/000/fff.png' alt='dog'>"
+                    + "</div>"
+                    + "<div class='infodiv'>"
+                      + "<h3 id='name8'>Simba</h3>"
+                      + "<h4 class='treatheader'>Favourite Treat</h4>"
+                      + "<button class='treatButton' id='showTreats8'>Show Favourite Treats</button>"
+                      + "<div class='treatlist' id='treats8'></div>"
+                    + "</div>"
+                  + "</div></li>"
+                  + "<li><div id='animal9' class='animalbox'>"
+                    + "<div id='image9' class='image'>"
+                      + "<img src='https://dummyimage.com/200x250/000/fff.png' alt='dog'>"
+                    + "</div>"
+                    + "<div class='infodiv'>"
+                      + "<h3 id='name9'>Milo</h3>"
+                      + "<h4 class='treatheader'>Favourite Treat</h4>"
+                      + "<button class='treatButton' id='showTreats9'>Show Favourite Treats</button>"
+                      + "<div class='treatlist' id='treats9'></div>"
+                    + "</div></div></li>"
+                    + "<li><div id='animal10' class='animalbox'>"
+                      + "<div id='image10' class='image'>"
+                        + "<img src='https://dummyimage.com/200x250/000/fff.png' alt='dog'>"
+                      + "</div>"
+                      + "<div class='infodiv'>"
+                        + "<h3 id='name10'>Minnie</h3>"
+                        + "<h4 class='treatheader'>Favourite Treat</h4>"
+                        + "<button class='treatButton' id='showTreats10'>Show Favourite Treats</button>"
+                        + "<div class='treatlist' id='treats10'></div>"
+                      + "</div></div></li></ul>";
