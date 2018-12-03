@@ -76,7 +76,7 @@ body {
 
 .blockbutton {
   display: block;
-  width: calc(100% / 3);
+  width: 50%;
   border: none;
   background-color: #022636;
   color: white;
