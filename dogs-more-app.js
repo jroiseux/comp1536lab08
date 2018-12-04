@@ -43,25 +43,6 @@ app.get('/get-animal-lists', function (req, res) {
     }
 });
 
-// creating get for treat lists
-app.get('/get-treat-lists', function (req, res) {
-
-  // Determining which gallery to put up
-  if (formatOfResponse == 'dog-treats') {
-      res.setHeader('Content-Type', 'text/json');
-      dataList = lists.getDogTreats();
-      res.send(dataList);
-
-  } else if (formatOfResponse == 'cat-treats') {
-      res.setHeader('Content-Type', 'text/html');
-      dataList = lists.getCatList();
-      res.send(dataList);
-
-  } else {
-      res.send({msg: 'Wrong format! (Dog/Cat Lists)'});
-  }
-});
-
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
