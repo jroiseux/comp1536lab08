@@ -91,7 +91,7 @@ $(document).ready(function() {
     $('.infodiv #showTreats2').click(function(e) {
 
         $.ajax({
-            url: "/get-animal-lists",
+            url: "/get-treat-lists", 
             dataType: "json", 
             type: "GET",
             data: { format: "show-treats-2"},
@@ -123,7 +123,7 @@ $(document).ready(function() {
     $('.infodiv #showTreats3').click(function(e) {
 
         $.ajax({
-            url: "/get-animal-lists", 
+            url: "/get-treat-lists",  
             dataType: "json", 
             type: "GET",
             data: { format: "show-treats-3"},
@@ -155,7 +155,7 @@ $(document).ready(function() {
     $('.infodiv #showTreats4').click(function(e) {
 
         $.ajax({
-            url: "/get-animal-lists",
+            url: "/get-treat-lists", 
             dataType: "json", 
             type: "GET",
             data: { format: "show-treats-4"},
@@ -189,7 +189,7 @@ $(document).ready(function() {
     $('.infoDiv #showTreats5').click(function(e) {
 
         $.ajax({
-            url: "/get-animal-lists",
+            url: "/get-treat-lists", 
             dataType: "html", 
             type: "GET",
             data: { format: "show-treats-5"},
@@ -214,7 +214,7 @@ $(document).ready(function() {
     $('.infoDiv #showTreats6').click(function(e) {
 
         $.ajax({
-            url: "/get-animal-lists",
+            url: "/get-treat-lists", 
             dataType: "html", 
             type: "GET",
             data: { format: "show-treats-6"},
@@ -239,7 +239,7 @@ $(document).ready(function() {
     $('.infoDiv #showTreats7').click(function(e) {
 
         $.ajax({
-            url: "/get-animal-lists",
+            url: "/get-treat-lists", 
             dataType: "html", 
             type: "GET",
             data: { format: "show-treats-7"},
@@ -264,7 +264,7 @@ $(document).ready(function() {
     $('.infoDiv #showTreats8').click(function(e) {
 
         $.ajax({
-            url: "/get-animal-lists",
+            url: "/get-treat-lists", 
             dataType: "html", 
             type: "GET",
             data: { format: "show-treats-8"},

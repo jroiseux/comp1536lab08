@@ -40,6 +40,10 @@ app.get('/get-animal-lists', function (req, res) {
     } else {
         res.send({msg: 'Wrong format! (Dog/Cat Lists)'});
     }
+});
+
+// creating get for treat lists
+app.get('/get-treat-lists', function (req, res) {
 
     // Determining whose favourite treat list to get
     let treatResponse = req.query['format'];
