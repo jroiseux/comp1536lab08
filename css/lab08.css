@@ -22,7 +22,6 @@ body {
 
 #title {
   text-align: center;
-  font-size: 24pt;
   font-family: 'Patrick Hand SC', cursive;
   padding-bottom: 5%;
   padding-top: 5%;
@@ -130,6 +129,10 @@ body {
 
 @media screen and (max-width: 600px) {
 
+  #title {
+  font-size: 18pt;
+  }
+
   .animalbox {
     width: 100%;
   }
@@ -138,7 +141,7 @@ body {
     font-size: 12pt;
   }
   .treatButton {
-    font-size: 12pt;
+    font-size: 10pt;
   }
   .infodiv {
     padding: 1em 8em 1em 8em;
@@ -147,6 +150,10 @@ body {
 }
 
 @media screen and (min-width: 600px) {
+
+  #title {
+  font-size: 20pt;
+  }
 
   .animalbox {
     width: 50%;
@@ -157,7 +164,7 @@ body {
   }
 
   .treatButton {
-    font-size: 12pt;
+    font-size: 10pt;
   }
 
   .infodiv {
@@ -169,16 +176,20 @@ body {
 
 @media screen and (min-width: 768px) {
 
+  #title {
+  font-size: 22pt;
+  }
+
   .animalbox {
     width: calc(100% / 3);
   }
 
   .blockbutton {
-    font-size: 16pt;
+    font-size: 14pt;
   }
 
   .treatButton {
-    font-size: 14pt;
+    font-size: 12pt;
   }
 
 
@@ -186,6 +197,10 @@ body {
 }
 
 @media screen and (min-width: 992px) {
+
+  #title {
+  font-size: 24pt;
+  }
 
   .animalbox {
     width: 25%;
@@ -196,7 +211,7 @@ body {
   }
 
   .treatButton {
-    font-size: 14pt;
+    font-size: 12pt;
   }
 
 }
