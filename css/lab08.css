@@ -8,6 +8,10 @@ body {
   padding: 0;
 }
 
+ul {
+  list-style-type: none;
+}
+
 #paw {
   width: 2em;
   animation-name: appear;
@@ -112,20 +116,6 @@ body {
   transform: translateY(3px);
 }
 
-.treatButton {
-  box-sizing: border-box;
-  display: block;
-  width: 100%;
-  border: none;
-  background-color: #022636;
-  color: white;
-  outline: none;
-  padding: 1em 1em;
-  font-family: 'Quicksand', sans-serif;
-  cursor: pointer;
-  text-align: center;
-  margin: 1em 0 1em 0;
-}
 
 @media screen and (max-width: 600px) {
 
@@ -140,9 +130,7 @@ body {
   .blockbutton {
     font-size: 12pt;
   }
-  .treatButton {
-    font-size: 10pt;
-  }
+
   .infodiv {
     padding: 1em 8em 1em 8em;
   }
@@ -163,9 +151,6 @@ body {
     font-size: 12pt;
   }
 
-  .treatButton {
-    font-size: 10pt;
-  }
 
   .infodiv {
     padding: 1em 2em 1em 2em;
@@ -188,9 +173,6 @@ body {
     font-size: 14pt;
   }
 
-  .treatButton {
-    font-size: 12pt;
-  }
 
 
 
@@ -210,8 +192,5 @@ body {
     font-size: 16pt;
   }
 
-  .treatButton {
-    font-size: 12pt;
-  }
 
 }

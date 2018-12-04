@@ -17,8 +17,9 @@ app.get('/', function (req, res) {
 });
 
 // creating virtual paths for css, js, and img
-app.use('/js', express.static('./js'))
-app.use('/css', express.static('./css'))
+app.use('/js', express.static('./js'));
+app.use('/css', express.static('./css'));
+app.use('/img', express.static('./img'));
 
 // creating get for animal data lists
 app.get('/get-animal-lists', function (req, res) {
@@ -29,7 +30,7 @@ app.get('/get-animal-lists', function (req, res) {
     // Determining which gallery to put up
     if (formatOfResponse == 'see-dogs') {
         res.setHeader('Content-Type', 'text/html');
-        dataList = lists.getDogList();
+        dataList = lists.getDogs();
         res.send(dataList);
 
     } else if (formatOfResponse == 'see-cats') {
@@ -45,61 +46,20 @@ app.get('/get-animal-lists', function (req, res) {
 // creating get for treat lists
 app.get('/get-treat-lists', function (req, res) {
 
-    // Determining whose favourite treat list to get
-    let treatResponse = req.query['format'];
-    let treatList = null;
-    if (treatResponse == 'show-treats-1') {
+  // Determining which gallery to put up
+  if (formatOfResponse == 'dog-treats') {
+      res.setHeader('Content-Type', 'text/json');
+      dataList = lists.getDogTreats();
+      res.send(dataList);
 
-        res.setHeader('Content-Type', 'application/json');
-        treatList = lists.getIvyTreats();
-        res.send(treatList);
+  } else if (formatOfResponse == 'cat-treats') {
+      res.setHeader('Content-Type', 'text/html');
+      dataList = lists.getCatList();
+      res.send(dataList);
 
-    } else if (treatResponse == 'show-treats-2') {
-
-        res.setHeader('Content-Type', 'application/json');
-        treatList = lists.getAryaTreats();
-        res.send(treatList);
-
-    } else if (treatResponse == 'show-treats-3') {
-
-        res.setHeader('Content-Type', 'application/json');
-        treatList = lists.getGaryTreats();
-        res.send(treatList);
-
-    } else if (treatResponse == 'show-treats-4') {
-
-        res.setHeader('Content-Type', 'application/json');
-        treatList = lists.getRufusTreats();
-        res.send(treatList);
-
-    } else if (treatResponse == 'show-treats-5') {
-
-        res.setHeader('Content-Type', 'text/html');
-        treatList = lists.getLilyTreats();
-        res.send(treatList);
-
-    } else if (treatResponse == 'show-treats-6') {
-
-        res.setHeader('Content-Type', 'text/html');
-        treatList = lists.getHugoTreats();
-        res.send(treatList);
-
-    } else if (treatResponse == 'show-treats-7') {
-
-        res.setHeader('Content-Type', 'text/html');
-        treatList = lists.getSimbaTreats();
-        res.send(treatList);
-
-    } else if (treatResponse == 'show-treats-8') {
-
-        res.setHeader('Content-Type', 'text/html');
-        treatList = lists.getMiloTreats();
-        res.send(treatList);
-
-    } else {
-        res.send({msg: 'Wrong format!'});
-        console.log('not loading!');
-    }
+  } else {
+      res.send({msg: 'Wrong format! (Dog/Cat Lists)'});
+  }
 });
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -111,7 +71,7 @@ app.use(function (req, res, next) {
     res.status(404).send("<html><head><title>Page not found!</title></head><body><p>Error 404: Nothing here.</p></body></html>");
 })
 
-// RUN SERVER 
+// RUN SERVER
 let port = 4200;
 app.listen(port, function () {
     console.log('Example app listening on port ' + port + '!');
